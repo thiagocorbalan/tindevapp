@@ -7,9 +7,6 @@ routes.get('/', (req, res) => {
     return res.json({ message: `Hello Bacon ${req.query.name}`});
 });
 
-routes.post('/devs', (req,res) => {
-    return res.json(req.body);
-    
-});
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
