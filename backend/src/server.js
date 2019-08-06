@@ -1,10 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
 
 const server = express();
 
-// GET, POST, PUT, DELETE
-server.get('/', (req, res) => {
-    return res.json({ message: `Hello Bacon ${req.query.name}`});
-});
+mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-it4x2.mongodb.net/oministack8?retryWrites=true&w=majority', {
+    useNewUrlParser: true
+})
 
-server.listen(3333);
+server.use(express.json());
+server.use(routes);
+
+server.listen(3333); 
