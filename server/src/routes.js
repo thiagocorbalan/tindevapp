@@ -6,7 +6,7 @@ const DisLikeController = require('./controllers/DisLikeController');
 const routes = express.Router();
 
 routes.get('/', (req, res) => {
-    return res.json({ message: `Hello Bacon ${req.query.name}`});
+    return res.json({ message: 'Server is running...'});
 });
 
 routes.get('/devs', DevController.index);

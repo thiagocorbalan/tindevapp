@@ -14,4 +14,6 @@ server.use(cors());
 server.use(express.json());
 server.use(routes);
 
-server.listen(3333); 
+server.listen(3333, () => {
+	console.log('Server is runnning in http://localhost:3333');
+}); 
